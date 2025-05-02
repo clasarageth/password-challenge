@@ -16,7 +16,7 @@ def send_post_request(pin):
         f"Host: {host}:{port}\r\n"
         f"Content-Type: application/x-www-form-urlencoded\r\n"
         f"Content-Length: {len(form_data)}\r\n"
-        f"Custom-Header: CustomValue\r\n"
+        f"Connection: close\r\n"
         f"\r\n"
         f"{form_data}"
     )
