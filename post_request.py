@@ -8,12 +8,12 @@ def send_post_request(pin):
 
     # Define the form data and current pin guess
     pin_guess = f"{pin:03d}"
-    form_data = f"magicNumber:{pin_guess}"
+    form_data = f"magicNumber={pin_guess}"
 
     # Create the HTTP request with customized header
     request = (
         f"POST {resource} HTTP/1.1\r\n"
-        f"Host: {host}\r\n"
+        f"Host: {host}:{port}\r\n"
         f"Content-Type: application/x-www-form-urlencoded\r\n"
         f"Content-Length: {len(form_data)}\r\n"
         f"Custom-Header: CustomValue\r\n"
