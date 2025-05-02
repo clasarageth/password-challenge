@@ -1,4 +1,5 @@
 import socket
+import time
 
 def send_post_request():
     host = "example.com"
