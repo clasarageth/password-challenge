@@ -1,13 +1,14 @@
 import socket
 import time
 
-def send_post_request():
+def send_post_request(pin):
     host = "localhost"
     port = 8888
     resource = "/verify"
 
-    # Define the form data
-    form_data = "name=John&email=john@example.com&message=Hello, world!"
+    # Define the form data and current pin guess
+    pin_guess = f"{pin:03d}"
+    form_data = f"magicNumber:{pin_guess}"
 
     # Create the HTTP request with customized header
     request = (
