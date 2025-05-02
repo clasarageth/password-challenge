@@ -39,8 +39,15 @@ def send_post_request(pin):
     # Close the connection
     client_socket.close()
 
-    # Print the response
-    print(response.decode())
+
+    # Decode and process the response
+    decoded = response.decode(errors="ignore")
+    if "Access Granted" in decoded or "Correct" in decoded:
+        print(f"SUCCESS! PIN: {pin_guess}")
+        return True
+    else:
+        print(f"Trying PIN: {pin_guess}")
+        return False
 
 if __name__ == "__main__":
     send_post_request()
