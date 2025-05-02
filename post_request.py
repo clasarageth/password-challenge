@@ -2,9 +2,9 @@ import socket
 import time
 
 def send_post_request():
-    host = "example.com"
-    port = 80
-    resource = "/submit-form"
+    host = "localhost"
+    port = 8888
+    resource = "/verify"
 
     # Define the form data
     form_data = "name=John&email=john@example.com&message=Hello, world!"
